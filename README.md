@@ -25,4 +25,4 @@ npm start
 ```
 Frontend: http://localhost:3000
 
-This version uses Create React App (`react-scripts`) and does NOT use Vite.
+
