@@ -1,28 +1,36 @@
-# Student Task & Attendance Manager — No Vite
+# Student Task & Attendance Manager
 
-Tech stack:
+A web application for managing student tasks and attendance.
+
+## Project Live At
+
+Frontend:
+https://your-vercel-url.vercel.app
+
+Backend:
+https://student-task-attendance-manager.onrender.com
+
+## Tech Stack
+
 - React
 - HTML / JSX
 - CSS
 - Node.js
 - Express.js
 
-## Run Backend
-Open Terminal 1:
-```bash
-cd backend
-npm install
-npm start
-```
-Backend: http://localhost:5000
+## Project Structure
 
-## Run React Frontend
-Open Terminal 2:
-```bash
-cd frontend
-npm install
-npm start
-```
-Frontend: http://localhost:3000
-
+```text
+student-task-attendance-manager/
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   └── package.json
+│
+├── backend/
+│   ├── server.js
+│   └── package.json
+│
+└── README.md
 
