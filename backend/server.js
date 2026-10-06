@@ -49,5 +49,5 @@ app.delete("/api/tasks/:id", (req, res) => {
 app.get("/api/attendance", (req, res) => res.json(attendance));
 
 app.listen(5000, () => {
-  console.log("Backend running at http://localhost:5000");
+  console.log("Backend running at https://student-task-attendance-manager.onrender.com/");
 });
