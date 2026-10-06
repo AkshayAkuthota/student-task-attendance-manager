@@ -4,7 +4,7 @@ A web application for managing student tasks and attendance.
 
 ## Project Live At
 
-Frontend:
+Frontend:https://student-task-attendance-manager-alpha.vercel.app/
 
 Backend:
 https://student-task-attendance-manager.onrender.com
