@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const API = "http://localhost:5000/api";
+const API = "https://student-task-attendance-manager.onrender.com/";
 
 function App() {
   const [tasks, setTasks] = useState([]);
