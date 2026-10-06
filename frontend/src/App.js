@@ -10,8 +10,8 @@ function App() {
   const [form, setForm] = useState({ title: "", subject: "", dueDate: "" });
 
   const loadData = async () => {
-    const taskData = await fetch(`${API}/tasks`).then(r => r.json());
-    const attendanceData = await fetch(`${API}/attendance`).then(r => r.json());
+    const taskData = await fetch(`${API}/api/tasks`).then(r => r.json());
+    const attendanceData = await fetch(`${API}/api/attendance`).then(r => r.json());
     setTasks(taskData);
     setAttendance(attendanceData);
   };
@@ -38,7 +38,7 @@ function App() {
   }
 
   async function toggleTask(task) {
-    await fetch(`${API}/tasks/${task.id}`, {
+    await fetch(`${API}/api/tasks/${task.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -49,7 +49,7 @@ function App() {
   }
 
   async function deleteTask(id) {
-    await fetch(`${API}/tasks/${id}`, { method: "DELETE" });
+    await fetch(`${API}/api/tasks/${id}`, { method: "DELETE" });
     loadData();
   }
 
@@ -152,8 +152,8 @@ function App() {
             <div className="cover"></div>
             <div className="profile-body">
               <div className="large-avatar">PN</div>
-              <h2>Nikhitha</h2>
-              <p>Student • Computer Science</p>
+              <h2>Akshay Kumar</h2>
+              <p>Student • Electrical Engineering</p>
               <div className="profile-grid">
                 <div><small>College</small><b>NIT Rourkela</b></div>
                 <div><small>Year</small><b>3rd Year</b></div>
