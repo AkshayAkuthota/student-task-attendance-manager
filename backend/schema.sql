@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_hash TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS tasks (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  title VARCHAR(200) NOT NULL,
+  subject VARCHAR(100) NOT NULL,
+  due_date DATE,
+  status VARCHAR(20) NOT NULL DEFAULT 'Pending'
+    CHECK (status IN ('Pending', 'Completed')),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS attendance (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  subject VARCHAR(100) NOT NULL,
+  present INTEGER NOT NULL DEFAULT 0 CHECK (present >= 0),
+  total INTEGER NOT NULL DEFAULT 0 CHECK (total >= present),
+  UNIQUE (user_id, subject)
+);
